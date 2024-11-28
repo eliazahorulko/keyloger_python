@@ -1,4 +1,5 @@
 Disclaimer
+
 Important Notice:
 
 This project is intended solely for educational purposes and is designed to demonstrate the functionality of a keylogger program in a controlled, ethical, and legal environment. By using or reviewing this code, you agree to the following conditions:
