@@ -14,7 +14,6 @@ No Unauthorized Deployment: Do not deploy or use this keylogger on any system wi
 Respect Privacy: Always respect privacy and follow ethical guidelines in cybersecurity. Any activity that involves unauthorized surveillance or data collection is a violation of privacy rights.
 
 Liability: The creator of this project does not take responsibility for any damage, loss of data, or any other consequences that may arise from the use of this code.
-
 By proceeding with the use or study of this project, you acknowledge and agree to the terms set forth in this disclaimer.
 -------------------------------
 Keylogger with Telegram Integration
