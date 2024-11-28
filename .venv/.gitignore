@@ -1,0 +1,33 @@
+# Byte-compiled / оптимизированные файлы Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Конфигурации среды разработки (например, PyCharm, VSCode)
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Виртуальное окружение
+venv/
+env/
+.virtualenv/
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.swp
+*.DS_Store
+*.bak
+
+# Секретные файлы конфигурации
+.env
+*.key
+*.pem
+
+# Файлы, создаваемые операционной системой
+Thumbs.db
+desktop.ini
+*.~lock.*

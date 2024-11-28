@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/keyloger_python" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/keyloger_python/keyloger_python" vcs="Git" />
   </component>
 </project>
