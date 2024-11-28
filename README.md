@@ -1,6 +1,14 @@
+Disclaimer
+
+This code is for educational purposes only.
+
+Using this code for spying, hacking, or breaking the law is **strictly prohibited**.
+
+The author is not responsible for any actions related to the use of this code.
+-------------------------------
 Keylogger with Telegram Integration
 
-Overvieц
+Overview
 This project implements a keylogger that captures keystrokes and provides periodic reports. Reports can be:
 - Sent to a Telegram chat via a bot.
 - Saved as text files on the local system.
